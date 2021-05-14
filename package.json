@@ -1,0 +1,14 @@
+{
+  "name": "javascript-algorithm",
+  "version": "1.0.0",
+  "description": "javascript algorithm practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emmanuel Okoro",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.0.0"
+  }
+}
