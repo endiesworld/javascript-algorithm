@@ -30,6 +30,7 @@ const questions = [
     },
 ]
 
+//Big-0 notation = O(n)
 function loopFunction(n){
     let sum = 0 ;
     for(let i = 1 ; i<= n ; i++){
@@ -38,6 +39,7 @@ function loopFunction(n){
     return sum ;
 }
 
+//Big-0 notation = O(1)
 function mathFunction(n){
     return n*(n+1) / 2 ;
 }
