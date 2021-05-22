@@ -1,52 +1,44 @@
 function frogRiverOne(X, A){
-    
+    let memory = {} ;
+    let memoryCounter = 0 ;
+    let index = 1 ;
     let N = A.length  ;
-    let answer = {
-        left: false ,
-        right: false
-    }
-    let left = 0 ; 
-    let right = (A.length - 1) || 1 ;
 
-    if( X < 1 || X > 100000 || A.length < 1 || A.length > 100000){
-        return -1 ;
-    }
-
-
-    if( X === A[left]){
-        return -1 ;
-    }
-
-    if( X === A[right]){
-        return right ;
-    }
-
-    for(let i = 1; i <A.length - 1 ; i++){
-        left = i ;
-        right = N - (1+ i) ;
-        if( X === A[left]){
-        answer.left = true
-        break ;
-    }
-
-    if( X === A[right]){
-        answer.right = true;
-        break ;
-    }
-    }
-
-    if(answer.left && answer.right){
+    if( X < 1 || X > 100000 || N < 1 || N > 100000){
         return -1 ;
     }
     
-    if(answer.left ){
-        return left ;
+
+    if( X === 1 && A[0] === 1){
+        return 0 ;
     }
 
-    else if(answer.right ){
-        return right ;
+     if( N === 1){
+        return -1 ;
     }
-    return -1;
+
+     if( N < X){
+        return -1 ;
+    }
+//(5, [1,3,1,4,2,3,5,4])
+    for(let i = 0 ; i< N ; i++){
+        index = i ;
+        if(A[i] <= X && !(memory[A[i]])){
+            
+            memory[A[i]] = true ;
+            memoryCounter++
+            
+        }
+        if(memoryCounter === X){
+            break ;
+        }
+    }
+    if (memoryCounter < X){
+        return -1
+        
+    }
+ return index ;
 }
 
 module.exports = {frogRiverOne}
+
